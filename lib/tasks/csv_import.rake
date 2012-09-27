@@ -12,7 +12,7 @@ task :import_csv_female_firstnames => :environment do
 end
 
 task :import_csv_male_firstnames => :environment do    
-  puts "Running Import CSV Female Firstnames"
+  puts "Running Import CSV Male Firstnames"
   csv_text = File.open("/Users/simong/Programming/Rails/random_name_generator/public/1990malefirstnames.csv")
   csv = CSV.parse(csv_text, :headers => true)
   csv.each do |row|
@@ -21,5 +21,15 @@ task :import_csv_male_firstnames => :environment do
   end
 end
 
-# task :import_names => [:import_csv_female_firstnames, :import_csv_male_firstnames] do
+task :import_csv_surnames => :environment do    
+  puts "Running Import CSV Surnames"
+  csv_text = File.open("/Users/simong/Programming/Rails/random_name_generator/public/2000surnames.csv")
+  csv = CSV.parse(csv_text, :headers => true)
+  csv.each do |row|
+    row = row.to_hash.with_indifferent_access
+    Surname.create!(row.to_hash.symbolize_keys)
+  end
+end
+
+# task :import_names => [:import_csv_female_firstnames, :import_csv_male_firstnames, :import_csv_surnames] do
 # end
