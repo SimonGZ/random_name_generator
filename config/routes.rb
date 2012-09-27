@@ -1,4 +1,12 @@
 RandomNameGenerator::Application.routes.draw do
+  get "random/home"
+
+  get "random/first"
+
+  get "random/last"
+
+  get "random/full"
+
   resources :surnames
 
   resources :firstnames
