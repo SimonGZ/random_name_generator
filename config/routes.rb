@@ -6,6 +6,8 @@ RandomNameGenerator::Application.routes.draw do
   get "random/last"
 
   get "random/full"
+  
+  root :to => "random#home"
 
   resources :surnames
 

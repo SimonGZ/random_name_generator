@@ -1,2 +1,19 @@
 <h1>Random#last</h1>
 <p>Find me in app/views/random/last.html.erb</p>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Rank</th>
+		<th>Frequency</th>
+		<th>Percent White</th>
+	</tr>
+<% @names.each do |name| %>
+	<tr>
+		<td><%= name.body %></td>
+		<td><%= name.rank %></td>
+		<td><%= name.frequency %></td>
+		<td><%= name.pctwhite %></td>
+	</tr>
+<% end %>
+</table>
