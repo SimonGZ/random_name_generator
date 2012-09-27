@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: firstnames
+#
+#  id         :integer          not null, primary key
+#  body       :string(255)
+#  gender     :string(255)
+#  frequency  :decimal(4, 3)
+#  rank       :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'test_helper'
 
 class FirstnameTest < ActiveSupport::TestCase
