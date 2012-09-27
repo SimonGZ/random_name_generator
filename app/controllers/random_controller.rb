@@ -1,6 +1,7 @@
 class RandomController < ApplicationController
 
   def home
+
   end
 
   def first

@@ -1,1 +1,21 @@
-Form Goes Here
+<%= form_tag do %>
+  <%= label_tag(:q, "Search for:") %>
+  <p>
+	  <%= radio_button_tag(:gender, "female") %>
+	  <%= label_tag(:gender_female, "Female") %>
+	  <%= radio_button_tag(:gender, "male") %>
+	  <%= label_tag(:gender_male, "Male") %>
+  </p>
+  
+  <p>
+	  <%= radio_button_tag(:nametype, "full") %>
+	  <%= label_tag(:nametype_full, "Full Name") %>
+	  <%= radio_button_tag(:nametype, "first") %>
+	  <%= label_tag(:nametype_first, "First Name Only") %>
+	  <%= radio_button_tag(:nametype, "last") %>
+	  <%= label_tag(:nametype_last, "Last Name Only") %>
+  </p>
+
+  
+  <%= submit_tag("Generate") %>
+<% end %>
