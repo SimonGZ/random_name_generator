@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Body:</b>
+  <%= @firstname.body %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @firstname.gender %>
+</p>
+
+<p>
+  <b>Frequency:</b>
+  <%= @firstname.frequency %>
+</p>
+
+<p>
+  <b>Rank:</b>
+  <%= @firstname.rank %>
+</p>
+
+
+<%= link_to 'Edit', edit_firstname_path(@firstname) %> |
+<%= link_to 'Back', firstnames_path %>

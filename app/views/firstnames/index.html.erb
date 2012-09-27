@@ -1,0 +1,29 @@
+<h1>Listing firstnames</h1>
+
+<table>
+  <tr>
+    <th>Body</th>
+    <th>Gender</th>
+    <th>Frequency</th>
+    <th>Rank</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @firstnames.each do |firstname| %>
+  <tr>
+    <td><%= firstname.body %></td>
+    <td><%= firstname.gender %></td>
+    <td><%= firstname.frequency %></td>
+    <td><%= firstname.rank %></td>
+    <td><%= link_to 'Show', firstname %></td>
+    <td><%= link_to 'Edit', edit_firstname_path(firstname) %></td>
+    <td><%= link_to 'Destroy', firstname, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Firstname', new_firstname_path %>
