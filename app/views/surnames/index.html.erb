@@ -1,0 +1,37 @@
+<h1>Listing surnames</h1>
+
+<table>
+  <tr>
+    <th>Body</th>
+    <th>Frequency</th>
+    <th>Rank</th>
+    <th>Pctwhite</th>
+    <th>Pctblack</th>
+    <th>Pctasian</th>
+    <th>Pctnative</th>
+    <th>Pcthispanic</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @surnames.each do |surname| %>
+  <tr>
+    <td><%= surname.body %></td>
+    <td><%= surname.frequency %></td>
+    <td><%= surname.rank %></td>
+    <td><%= surname.pctwhite %></td>
+    <td><%= surname.pctblack %></td>
+    <td><%= surname.pctasian %></td>
+    <td><%= surname.pctnative %></td>
+    <td><%= surname.pcthispanic %></td>
+    <td><%= link_to 'Show', surname %></td>
+    <td><%= link_to 'Edit', edit_surname_path(surname) %></td>
+    <td><%= link_to 'Destroy', surname, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Surname', new_surname_path %>

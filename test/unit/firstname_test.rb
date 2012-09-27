@@ -38,5 +38,27 @@ class FirstnameTest < ActiveSupport::TestCase
 
     assert_errors_on fname, :body, :gender, :frequency, :rank
   end
+
+  test "should not be valid if Rank is not a number" do
+    fname = Firstname.create(
+      :body => 'Sample Name',
+      :gender => 'Female',
+      :frequency => 0.036,
+      :rank => "doggie"
+    )
+
+    assert !fname.valid?, "Should not save rank if not a number"
+  end
+  
+  test "should not be valid if Frequency is not a number" do
+    fname = Firstname.create(
+      :body => 'Sample Name',
+      :gender => 'Female',
+      :frequency => "doggie",
+      :rank => 55
+    )
+
+    assert !fname.valid?, "Should not save frequency if not a number"
+  end
   
 end

@@ -16,7 +16,7 @@ class Firstname < ActiveRecord::Base
   
   validates :body, :presence => true
   validates :gender, :presence => true
-  validates :frequency, :presence => true
-  validates :rank, :presence => true
+  validates :frequency, :presence => true, :numericality => true
+  validates :rank, :presence => true, :numericality => true
   
 end

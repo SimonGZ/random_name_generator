@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120927190351) do
+ActiveRecord::Schema.define(:version => 20120927203010) do
 
   create_table "firstnames", :force => true do |t|
     t.string   "body"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(:version => 20120927190351) do
     t.integer  "rank"
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
+  end
+
+  create_table "surnames", :force => true do |t|
+    t.string   "body"
+    t.decimal  "frequency",   :precision => 5, :scale => 2
+    t.integer  "rank"
+    t.decimal  "pctwhite",    :precision => 4, :scale => 2
+    t.decimal  "pctblack",    :precision => 4, :scale => 2
+    t.decimal  "pctasian",    :precision => 4, :scale => 2
+    t.decimal  "pctnative",   :precision => 4, :scale => 2
+    t.decimal  "pcthispanic", :precision => 4, :scale => 2
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
 end

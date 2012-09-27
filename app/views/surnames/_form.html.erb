@@ -1,0 +1,49 @@
+<%= form_for(@surname) do |f| %>
+  <% if @surname.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@surname.errors.count, "error") %> prohibited this surname from being saved:</h2>
+
+      <ul>
+      <% @surname.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
+  </div>
+  <div class="field">
+    <%= f.label :frequency %><br />
+    <%= f.text_field :frequency %>
+  </div>
+  <div class="field">
+    <%= f.label :rank %><br />
+    <%= f.number_field :rank %>
+  </div>
+  <div class="field">
+    <%= f.label :pctwhite %><br />
+    <%= f.text_field :pctwhite %>
+  </div>
+  <div class="field">
+    <%= f.label :pctblack %><br />
+    <%= f.text_field :pctblack %>
+  </div>
+  <div class="field">
+    <%= f.label :pctasian %><br />
+    <%= f.text_field :pctasian %>
+  </div>
+  <div class="field">
+    <%= f.label :pctnative %><br />
+    <%= f.text_field :pctnative %>
+  </div>
+  <div class="field">
+    <%= f.label :pcthispanic %><br />
+    <%= f.text_field :pcthispanic %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

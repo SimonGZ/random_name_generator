@@ -1,4 +1,6 @@
 RandomNameGenerator::Application.routes.draw do
+  resources :surnames
+
   resources :firstnames
 
   # The priority is based upon order of creation:

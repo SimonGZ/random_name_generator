@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Body:</b>
+  <%= @surname.body %>
+</p>
+
+<p>
+  <b>Frequency:</b>
+  <%= @surname.frequency %>
+</p>
+
+<p>
+  <b>Rank:</b>
+  <%= @surname.rank %>
+</p>
+
+<p>
+  <b>Pctwhite:</b>
+  <%= @surname.pctwhite %>
+</p>
+
+<p>
+  <b>Pctblack:</b>
+  <%= @surname.pctblack %>
+</p>
+
+<p>
+  <b>Pctasian:</b>
+  <%= @surname.pctasian %>
+</p>
+
+<p>
+  <b>Pctnative:</b>
+  <%= @surname.pctnative %>
+</p>
+
+<p>
+  <b>Pcthispanic:</b>
+  <%= @surname.pcthispanic %>
+</p>
+
+
+<%= link_to 'Edit', edit_surname_path(@surname) %> |
+<%= link_to 'Back', surnames_path %>

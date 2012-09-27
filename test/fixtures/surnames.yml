@@ -1,0 +1,38 @@
+# == Schema Information
+#
+# Table name: surnames
+#
+#  id          :integer          not null, primary key
+#  body        :string(255)
+#  frequency   :decimal(5, 2)
+#  rank        :integer
+#  pctwhite    :decimal(4, 2)
+#  pctblack    :decimal(4, 2)
+#  pctasian    :decimal(4, 2)
+#  pctnative   :decimal(4, 2)
+#  pcthispanic :decimal(4, 2)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  body: MyString
+  frequency: 9.99
+  rank: 1
+  pctwhite: 9.99
+  pctblack: 9.99
+  pctasian: 9.99
+  pctnative: 9.99
+  pcthispanic: 9.99
+
+two:
+  body: MyString
+  frequency: 9.99
+  rank: 1
+  pctwhite: 9.99
+  pctblack: 9.99
+  pctasian: 9.99
+  pctnative: 9.99
+  pcthispanic: 9.99
