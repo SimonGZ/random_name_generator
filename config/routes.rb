@@ -1,5 +1,7 @@
 RandomNameGenerator::Application.routes.draw do
   get "random/home"
+  
+  get "random/generate"
 
   get "random/first"
 
@@ -12,6 +14,8 @@ RandomNameGenerator::Application.routes.draw do
   resources :surnames
 
   resources :firstnames
+  
+  match 'generate' => 'random#generate'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

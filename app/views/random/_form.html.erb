@@ -1,12 +1,6 @@
-<%= form_tag do %>
+<%= form_tag("/generate", :method => "get") do %>
   <%= label_tag(:q, "Search for:") %>
-  <p>
-	  <%= radio_button_tag(:gender, "female") %>
-	  <%= label_tag(:gender_female, "Female") %>
-	  <%= radio_button_tag(:gender, "male") %>
-	  <%= label_tag(:gender_male, "Male") %>
-  </p>
-  
+
   <p>
 	  <%= radio_button_tag(:nametype, "full") %>
 	  <%= label_tag(:nametype_full, "Full Name") %>
@@ -16,6 +10,17 @@
 	  <%= label_tag(:nametype_last, "Last Name Only") %>
   </p>
 
+  <p>
+	  <%= radio_button_tag(:gender, "Female") %>
+	  <%= label_tag(:gender_female, "Female") %>
+	  <%= radio_button_tag(:gender, "Male") %>
+	  <%= label_tag(:gender_male, "Male") %>
+  </p>
+
+  <p>
+	  <%= label_tag(:limit_tag, "Number of Results: ") %>
+	  <%= select_tag(:limit, options_for_select([['10',10], ['20',20], ['50',50]])) %>
+  </p>
   
   <%= submit_tag("Generate") %>
 <% end %>
