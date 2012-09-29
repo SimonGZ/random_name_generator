@@ -15,6 +15,7 @@ test:
   adapter: postgresql
   database: random_name_generator_test
   host: localhost
+  min_messages: WARNING
 
 production:
   adapter: sqlite3
