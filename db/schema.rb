@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120927203010) do
+ActiveRecord::Schema.define(:version => 20120929002229) do
 
   create_table "firstnames", :force => true do |t|
     t.string   "body"
@@ -21,6 +21,10 @@ ActiveRecord::Schema.define(:version => 20120927203010) do
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
   end
+
+  add_index "firstnames", ["frequency"], :name => "index_firstnames_on_frequency"
+  add_index "firstnames", ["gender"], :name => "index_firstnames_on_gender"
+  add_index "firstnames", ["rank"], :name => "index_firstnames_on_rank"
 
   create_table "surnames", :force => true do |t|
     t.string   "body"
@@ -34,5 +38,13 @@ ActiveRecord::Schema.define(:version => 20120927203010) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
   end
+
+  add_index "surnames", ["frequency"], :name => "index_surnames_on_frequency"
+  add_index "surnames", ["pctasian"], :name => "index_surnames_on_pctasian"
+  add_index "surnames", ["pctblack"], :name => "index_surnames_on_pctblack"
+  add_index "surnames", ["pcthispanic"], :name => "index_surnames_on_pcthispanic"
+  add_index "surnames", ["pctnative"], :name => "index_surnames_on_pctnative"
+  add_index "surnames", ["pctwhite"], :name => "index_surnames_on_pctwhite"
+  add_index "surnames", ["rank"], :name => "index_surnames_on_rank"
 
 end
