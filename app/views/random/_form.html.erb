@@ -1,26 +1,29 @@
-<%= form_tag("/generate", :method => "get") do %>
-  <%= label_tag(:q, "Search for:") %>
+<%= form_tag("/generate", :method => "get", :class => "form-inline") do %>
+  <%= label_tag :q, "Search for:" %>
 
   <p>
-	  <%= radio_button_tag(:nametype, "full") %>
-	  <%= label_tag(:nametype_full, "Full Name") %>
-	  <%= radio_button_tag(:nametype, "first") %>
-	  <%= label_tag(:nametype_first, "First Name Only") %>
-	  <%= radio_button_tag(:nametype, "last") %>
-	  <%= label_tag(:nametype_last, "Last Name Only") %>
+	  <%= label_tag :nametype_full, "Full Name", :class => "checkbox inline" %>
+	  <%= radio_button_tag :nametype, "full" %>
+	  
+	  <%= label_tag :nametype_first, "First Name Only", :class => "checkbox inline" %>
+	  <%= radio_button_tag :nametype, "first" %>
+	  
+	  <%= label_tag :nametype_last, "Last Name Only", :class => "checkbox inline" %>
+	  <%= radio_button_tag :nametype, "last" %>
   </p>
 
   <p>
-	  <%= radio_button_tag(:gender, "Female") %>
-	  <%= label_tag(:gender_female, "Female") %>
-	  <%= radio_button_tag(:gender, "Male") %>
-	  <%= label_tag(:gender_male, "Male") %>
+	  <%= label_tag :gender_female, "Female", :class => "checkbox inline" %>
+  	  <%= radio_button_tag :gender, "Female" %>
+
+	  <%= label_tag :gender_male, "Male", :class => "checkbox inline" %>
+  	  <%= radio_button_tag :gender, "Male" %>
   </p>
 
   <p>
-	  <%= label_tag(:limit_tag, "Number of Results: ") %>
-	  <%= select_tag(:limit, options_for_select([['10',10], ['20',20], ['50',50]])) %>
+	  <%= label_tag :limit_tag, "Number of Results: " %>
+	  <%= select_tag :limit, options_for_select([['10',10], ['20',20], ['50',50]]), :class => "span1" %>
   </p>
   
-  <%= submit_tag"Generate", :name => nil %>
+  <%= submit_tag"Generate", :name => nil, :class => "btn" %>
 <% end %>

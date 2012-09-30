@@ -1,0 +1,14 @@
+// Place all the styles related to the Surnames controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+
+body {
+	padding: 50px;
+}
+
+// Space out the select dropdowns in the navbar
+select {
+	margin-right: 1em;
+}

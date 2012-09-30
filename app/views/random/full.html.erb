@@ -1,13 +1,16 @@
-<h1>Random#full</h1>
-<p>Find me in app/views/random/full.html.erb</p>
-
-<table>
-	<tr>
-		<th>Name</th>
-	</tr>
-<% @names.each do |name| %>
-	<tr>
-		<td><%= name %></td>
-	</tr>
-<% end %>
-</table>
+<div class="span12">
+	<table class="table table-bordered table-striped table-hover">
+		<thead>
+			<tr>
+				<th>Full Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @names.each do |name| %>
+				<tr>
+					<td><%= name %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

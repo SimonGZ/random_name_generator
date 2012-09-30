@@ -1,19 +1,22 @@
-<h1>Random#first</h1>
-<p>Find me in app/views/random/first.html.erb</p>
-
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Gender</th>
-		<th>Rank</th>
-		<th>Frequency</th>
-	</tr>
-<% @names.each do |name| %>
-	<tr>
-		<td><%= name.body %></td>
-		<td><%= name.gender %></td>
-		<td><%= name.rank %></td>
-		<td><%= name.frequency %></td>
-	</tr>
-<% end %>
-</table>
+<div class="span12">
+	<table class="table table-bordered table-striped table-hover">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Gender</th>
+				<th>Rank</th>
+				<th>Frequency</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @names.each do |name| %>
+				<tr>
+					<td><%= name.body %></td>
+					<td><%= name.gender %></td>
+					<td><%= name.rank %></td>
+					<td><%= name.frequency %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
