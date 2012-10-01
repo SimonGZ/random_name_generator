@@ -31,7 +31,8 @@ class RandomController < ApplicationController
   end
 
   def last
-    @names = Surname.order("RANDOM()").limit(params[:limit])
+#    @names = Surname.order("RANDOM()").limit(params[:limit])
+    @names = Surname.random_names
   end
 
   def full

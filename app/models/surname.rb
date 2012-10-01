@@ -23,4 +23,10 @@ class Surname < ActiveRecord::Base
   validates :rank, :presence => true, :numericality => true
   validates :pctwhite, :presence => true, :numericality => true
   
+  RANKS = {:any => [0,151000], :common => [0,30000], :rare => [120000,150000] }
+  
+  def self.random_names(limit = 10, rank = :common, race = 0)
+    where("? <= rank AND rank <= ?", RANKS[rank][0], RANKS[rank][1]).order("RANDOM()").limit(limit)
+  end
+  
 end
