@@ -25,8 +25,15 @@ class Surname < ActiveRecord::Base
   
   RANKS = {:any => [0,151000], :common => [0,30000], :rare => [120000,150000] }
   
-  def self.random_names(limit = 10, rank = :common, race = 0)
-    where("? <= rank AND rank <= ?", RANKS[rank][0], RANKS[rank][1]).order("RANDOM()").limit(limit)
+  scope :any
+  scope :white, where('pctwhite > 50')
+  scope :black, where('pctblack > 50')
+  scope :hispanic, where('pcthispanic > 50')
+  scope :asian, where('pctasian > 50')
+  scope :native, where('pctnative > 50')
+  
+  def self.random_names(rank = :any, race = :any, limit = 10)
+    where("? <= rank AND rank <= ?", RANKS[rank][0], RANKS[rank][1]).send(race).order("RANDOM()").limit(limit)
   end
   
 end

@@ -19,4 +19,10 @@ class Firstname < ActiveRecord::Base
   validates :frequency, :presence => true, :numericality => true
   validates :rank, :presence => true, :numericality => true
   
+  RANKS = { :any => [0,4300], :common => [0,500], :rare => [500,4300] }
+  
+  def self.random_names(rank = :any, gender = :Male, limit = 10)
+    where("? <= rank AND rank <= ?", RANKS[rank][0], RANKS[rank][1]).where(:gender => gender).order("RANDOM()").limit(limit)
+  end
+  
 end
