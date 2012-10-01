@@ -34,7 +34,7 @@ class Surname < ActiveRecord::Base
   scope :native, where('pctnative > 50')
   
   def self.random_names(rank = :any, race = :any, limit = 10)
-    limit = 10 if !limit.is_a? Integer
+    limit = limit.to_i
     limit = 50 if limit > 50
     race = :any if !RACES.include? race
     rank = :any if !RANKS.include? rank

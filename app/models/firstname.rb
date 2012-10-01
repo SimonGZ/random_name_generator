@@ -23,7 +23,7 @@ class Firstname < ActiveRecord::Base
   GENDERS = [:Male, :Female]
   
   def self.random_names(rank = :any, gender = :Male, limit = 10)
-    limit = 10 if !limit.is_a? Integer
+    limit = limit.to_i
     limit = 50 if limit > 50
     gender = :Male if !GENDERS.include? gender
     rank = :any if !RANKS.include? rank
