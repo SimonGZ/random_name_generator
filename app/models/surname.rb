@@ -24,6 +24,7 @@ class Surname < ActiveRecord::Base
   validates :pctwhite, :presence => true, :numericality => true
   
   RANKS = {:any => [0,151000], :common => [0,30000], :rare => [120000,150000] }
+  RACES = [:any, :white, :black, :hispanic, :asian, :native]
   
   scope :any
   scope :white, where('pctwhite > 50')
@@ -33,6 +34,10 @@ class Surname < ActiveRecord::Base
   scope :native, where('pctnative > 50')
   
   def self.random_names(rank = :any, race = :any, limit = 10)
+    limit = 10 if !limit.is_a? Integer
+    limit = 50 if limit > 50
+    race = :any if !RACES.include? race
+    rank = :any if !RANKS.include? rank
     where("? <= rank AND rank <= ?", RANKS[rank][0], RANKS[rank][1]).send(race).order("RANDOM()").limit(limit)
   end
   

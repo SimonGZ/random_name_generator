@@ -1,11 +1,11 @@
 <%= form_tag("/generate", :method => "get", :class => "navbar-form form-inline") do %>
 <%= select_tag :nametype, options_for_select([['Full','full'], ['First','first'], ['Last','last']], params[:nametype]), :class => "input-small" %>
-<%= select_tag :gender, options_for_select([['Male','Male'], ['Female','Female']], params[:gender]), :class => "input-small" %>
+<%= select_tag :gender, options_for_select([['Male',:Male], ['Female',:Female]], params[:gender]), :class => "input-small" %>
 <%= label_tag :limit, "Results: ", :class => "checkbox" %>
 <%= select_tag :limit, options_for_select([['10',10], ['20',20], ['50',50]], params[:limit]), :class => "input-mini" %>
 <%= label_tag :rank, "Rarity: ", :class => "checkbox" %>
-<%= select_tag :rank, options_for_select([['Any',0], ['Common',10], ['Rare',20]], params[:rank]), :class => "input-small" %>
+<%= select_tag :rank, options_for_select([["Any", :any], ['Common',:common], ['Rare',:rare]], params[:rank]), :class => "input-small" %>
 <%= label_tag :race, "Race: ", :class => "checkbox" %>
-<%= select_tag :race, options_for_select([['Any',0], ['White',10], ['Black',20], ['Hispanic',30], ['Asian',40], ['Native American',50]], params[:race]), :class => "input-medium" %>
+<%= select_tag :race, options_for_select([['Any',:any], ['White',:white], ['Black',:black], ['Hispanic',:hispanic], ['Asian',:asian], ['Native American',:native]], params[:race]), :class => "input-medium" %>
 <%= submit_tag"Generate", :name => nil, :class => "btn pull-right" %>
 <% end %>

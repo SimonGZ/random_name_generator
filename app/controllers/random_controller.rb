@@ -5,10 +5,6 @@ class RandomController < ApplicationController
   end
 
   def generate
-    if params[:limit].to_i > 50
-      params[:limit] = '50'
-    end
-
     case params[:nametype]
     when "first"
       first
@@ -26,13 +22,11 @@ class RandomController < ApplicationController
   end
 
   def first
-    @names = Firstname.where(:gender => params[:gender]).order("RANDOM()").limit(params[:limit])
-#    @names = Firstname.where(:gender => 'Male').where("rank < ?", 300).order("RANDOM()").limit(20)
+    @names = Firstname.random_names(params[:rank].to_sym, params[:gender].to_sym, params[:limit])
   end
 
   def last
-#    @names = Surname.order("RANDOM()").limit(params[:limit])
-    @names = Surname.random_names
+    @names = Surname.random_names(params[:rank].to_sym, params[:race].to_sym, params[:limit])
   end
 
   def full
