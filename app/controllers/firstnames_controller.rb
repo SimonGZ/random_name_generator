@@ -2,7 +2,7 @@ class FirstnamesController < ApplicationController
   # GET /firstnames
   # GET /firstnames.json
   def index
-    @firstnames = Firstname.all
+    @firstnames = Firstname.find(:all, limit: 10)
 
     respond_to do |format|
       format.html # index.html.erb

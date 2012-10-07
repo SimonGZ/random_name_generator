@@ -11,9 +11,9 @@ RandomNameGenerator::Application.routes.draw do
   
   root :to => "random#home"
 
-  resources :surnames
+#  resources :surnames
 
-  resources :firstnames
+#  resources :firstnames
   
   match 'generate' => 'random#generate'
 
