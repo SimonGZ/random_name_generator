@@ -23,7 +23,7 @@ class Surname < ActiveRecord::Base
   validates :rank, :presence => true, :numericality => true
   validates :pctwhite, :presence => true, :numericality => true
   
-  RANKS = {:any => [0,151000], :common => [0,30000], :rare => [120000,150000] }
+  RANKS = {any: [0,151000], common: [0,30000], rare: [120000,150000] }
   RACES = [:any, :white, :black, :hispanic, :asian, :native]
   
   scope :any
