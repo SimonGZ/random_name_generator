@@ -1,16 +1,31 @@
 <div class="span12">
-	<table class="table table-bordered table-striped table-hover">
+	<table class="table table-striped table-hover">
 		<thead>
 			<tr>
 				<th>Full Name</th>
+				<th style="width: 15%">First/Last Ranks</th>
+				<th style="width: 10%">% White</th>
+				<th style="width: 10%">% Hispanic</th>
+				<th style="width: 10%">% Black</th>
+				<th style="width: 10%">% Asian</th>
+				<th style="width: 10%">% Native</th>
 			</tr>
 		</thead>
 		<tbody>
 			<% @names.each do |name| %>
 				<tr>
-					<td><%= name %></td>
+					<td><%= "#{name[0][:body]} #{name[1][:body]}" %></td>
+					<td><%= "#{name[0][:rank]}/#{name[1][:rank]}" %></td>
+					<td><%= name[1][:pctwhite] %></td>
+					<td><%= name[1][:pcthispanic] %></td>
+					<td><%= name[1][:pctblack] %></td>
+					<td><%= name[1][:pctasian] %></td>
+					<td><%= name[1][:pctnative] %></td>
 				</tr>
 			<% end %>
 		</tbody>
 	</table>
+</div>
+<div class="span12">
+	<p class="muted">Note: Racial statistics apply only to surname.</p>
 </div>
