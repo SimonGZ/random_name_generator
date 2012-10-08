@@ -34,7 +34,7 @@ class RandomController < ApplicationController
     
     i = 0
     @names = []
-    while i < params[:limit].to_i
+    while i < surnames.size
       @names[i] = [firstnames[i], surnames[i]]
       i += 1
     end  
