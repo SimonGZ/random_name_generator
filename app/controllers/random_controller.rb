@@ -18,7 +18,6 @@ class RandomController < ApplicationController
     else
       redirect_to root_url
     end
-#    generate_names(params[:nametype],params[:gender],params[:limit])
   end
 
   def first
@@ -32,8 +31,6 @@ class RandomController < ApplicationController
   def full
     firstnames = first
     surnames = last
- 
-    # This is returning an array of activerecord objects. Need to think about how to get the strings and deal with that. I think I'm right to get rid of things and turn them into arrays, but maybe there's something to be done with creating a hash. Simpler solution may be to just test whether firstnames returns the right number of results and cancel if it doesn't.
     
     i = 0
     @names = []

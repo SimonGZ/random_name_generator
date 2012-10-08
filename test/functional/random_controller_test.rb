@@ -26,7 +26,7 @@ class RandomControllerTest < ActionController::TestCase
   end
 
   test "should get correct names" do
-    params_hash = {:nametype => 'full', :gender => 'Female'}
+    params_hash = {nametype: 'full', gender: 'Female', limit: 10}
     get :generate, params_hash
     assert_response :success
     assert_template :full, "Template should match nametype"
