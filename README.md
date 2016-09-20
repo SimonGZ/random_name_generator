@@ -1,3 +1,9 @@
+# UPDATE
+
+This app is very out of date and is no longer online. It used an old version of Rails and a limited data set. A newer, completely rewritten version of the app with better data sources is now running on Node/Backbone.js at http://ranndy.com but it not yet open-source.
+
+I am leaving this repository online because the cleaned up census.gov CSV files I used may still be useful to someone, somewhere.
+
 # Random Name Generator
 
 This rails app is intended to function as a random name generator. It pulls in a combination of [1990][] and [2000][] US Census data using publicly available files and then generate names to the user's specifications.
